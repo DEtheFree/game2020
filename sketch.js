@@ -4,7 +4,7 @@ let state = 'title';
 let cnv;
 let points = 0;
 let w = 600;
-let l = 600;
+let h = 600;
 
 function setup(){
 	cnv = createCanvas(w, h);
