@@ -8,6 +8,11 @@ let h = 600;
 let player;
 let coins = [];
 
+
+//test of checking of github
+
+
+
 function setup(){
 	cnv = createCanvas(w, h);
 
@@ -78,15 +83,15 @@ function level1(){
 	player.display();
 	player.move();
 
-	
+
 
 	for (let i = 0; i < coins.length; i++){
 		coins[i].display();
 		coins[i].move();
 	}
 
-	
-	
+
+
 	//check for collision, increase points by 1
 	for (let i = coins.length - 1; i >= 0; i--){
 	if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2){
@@ -119,5 +124,5 @@ function youWin(){
 
 function youWinMouseClicked(){
 	state = 'level 1';
-	points = 0; 
+	points = 0;
 }
