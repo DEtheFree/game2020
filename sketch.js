@@ -6,7 +6,7 @@ let points = 0;
 let w = 600;
 let h = 600;
 let player;
-let coin;
+let coins = [];
 
 function setup(){
 	cnv = createCanvas(w, h);
@@ -14,7 +14,8 @@ function setup(){
 	textFont("monospace");
 
 	player = new Player();
-	coin = new coin();
+
+	coins.push(new coin());
 }
 
 function draw(){
@@ -37,7 +38,19 @@ function draw(){
 	}
 }
 
-
+function keyPressed(){
+	if (keyCode == LEFT_ARROW){
+		player.direction = 'left'
+	} else if (keyCode == RIGHT_ARROW){
+		player.direction = 'right'
+	} else if (keyCode == UP_ARROW){
+		player.direction = 'up'
+	} else if (keyCode == DOWN_ARROW){
+		player.direction = 'down'
+	} else if (key == ' '){
+		player.direction = 'still';
+	}
+}
 
 function title(){
 	background(100);
@@ -58,18 +71,40 @@ function titleMouseClicked(){
 function level1(){
 	background(50, 150, 200);
 	//text('get points', w/2, h -30); //puts in the bottom left corner
+	if (random(1) <= 0.01){
+		coins.push(new coin());
+	}
+
 	player.display();
-	coin.display();
-	coin.move();
+	player.move();
+
+	
+
+	for (let i = 0; i < coins.length; i++){
+		coins[i].display();
+		coins[i].move();
+	}
+
+	
+	
+	//check for collision, increase points by 1
+	for (let i = coins.length - 1; i >= 0; i--){
+	if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2){
+		points++;
+		console.log(points);
+		coins.splice(i, 1);
+	 }
+	}
+	text('points: ${points}', w / 4, h - 30);
 }
 
 function level1mouseclicked(){
-	points = points + 1; // same as points += 1;
-	console.log('points =' + points);
+	// points = points + 1; // same as points += 1;
+	// console.log('points =' + points);
 
-	if (points >= 10){
-		state = 'you win';
-	}
+	// if (points >= 10){
+	// 	state = 'you win';
+	// }
 }
 
 function youWin(){
