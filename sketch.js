@@ -13,7 +13,7 @@ function setup(){
 
 	textFont("monospace");
 
-	player = new Player();
+	player = new player();
 
 	coins.push(new coin());
 }
