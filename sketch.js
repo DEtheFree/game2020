@@ -5,11 +5,16 @@ let cnv;
 let points = 0;
 let w = 600;
 let h = 600;
+let player;
+let coin;
 
 function setup(){
 	cnv = createCanvas(w, h);
 
 	textFont("monospace");
+
+	player = new Player();
+	coin = new coin();
 }
 
 function draw(){
@@ -52,7 +57,10 @@ function titleMouseClicked(){
 
 function level1(){
 	background(50, 150, 200);
-	text('get points', w/2, h -30); //puts in the bottom left corner
+	//text('get points', w/2, h -30); //puts in the bottom left corner
+	player.display();
+	coin.display();
+	coin.move();
 }
 
 function level1mouseclicked(){
