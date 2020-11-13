@@ -35,7 +35,7 @@ class Player {
 			break;
 			this.x += this.speed;
 			break;
-			default;
+			default:
 			break;
 		}
 	}

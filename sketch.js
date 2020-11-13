@@ -104,12 +104,12 @@ function level1(){
 }
 
 function level1mouseclicked(){
-	// points = points + 1; // same as points += 1;
-	// console.log('points =' + points);
+	points = points + 1; // same as points += 1;
+	console.log('points =' + points);
 
-	// if (points >= 10){
-	// 	state = 'you win';
-	// }
+	if (points >= 10){
+		state = 'you win';
+	}
 }
 
 function youWin(){
