@@ -18,7 +18,7 @@ function setup(){
 
 	textFont("monospace");
 
-	player = new player();
+	player = new Player();
 
 	coins.push(new coin());
 }
