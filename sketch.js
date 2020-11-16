@@ -7,6 +7,14 @@ let w = 600;
 let h = 600;
 let player;
 let coins = [];
+let playerImg;
+let coinImg;
+
+function preload(){
+	playerImg = loadImage('assets/     .jpg');
+	coinImg = loadImage('assets/     .jpg');
+	//powers of twos 32x32 will read faster
+}
 
 
 //test of checking of github
@@ -84,7 +92,6 @@ function level1(){
 	player.move();
 
 
-
 	for (let i = 0; i < coins.length; i++){
 		coins[i].display();
 		coins[i].move();
@@ -98,6 +105,9 @@ function level1(){
 		points++;
 		console.log(points);
 		coins.splice(i, 1);
+	 } else if (coins[i].y > h){
+	 	coins.splice(i, 1);
+	 	console.log('coin is out of town');
 	 }
 	}
 	text('points: ${points}', w / 4, h - 30);
