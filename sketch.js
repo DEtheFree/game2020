@@ -82,7 +82,7 @@ function titleMouseClicked(){
 }
 
 function level1(){
-	background(50, 150, 200);
+	background(0);
 	//text('get points', w/2, h -30); //puts in the bottom left corner
 	if (random(1) <= 0.01){
 		coins.push(new coin());
