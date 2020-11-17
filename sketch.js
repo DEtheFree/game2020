@@ -11,8 +11,8 @@ let playerImg;
 let coinImg;
 
 function preload(){
-	playerImg = loadImage('assets/     .jpg');
-	coinImg = loadImage('assets/     .jpg');
+	playerImg = loadImage('assets/grabber.png');
+	coinImg = loadImage('assets/coin.png');
 	//powers of twos 32x32 will read faster
 }
 
