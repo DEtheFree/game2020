@@ -110,7 +110,7 @@ function level1(){
 	 	console.log('coin is out of town');
 	 }
 	}
-	text('points: ${points}', w / 4, h - 30);
+	text('points: ' + points, w / 4, h - 30);
 }
 
 function level1mouseclicked(){
