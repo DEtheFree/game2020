@@ -29,6 +29,7 @@ function setup(){
 	player = new Player();
 
 	coins.push(new coin());
+	createCanvas(600, 600);
 }
 
 function draw(){
